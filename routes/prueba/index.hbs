@@ -1,0 +1,72 @@
+{{#if servicio = consultorio}}    
+    <div class="cont_principal">
+      <img class="encabezado" src="/img/logo_con.png" />
+      <img class="encabezado2" src="/img/logo_caf_itaes.png" />
+      <div id="listado" class="listado"></div>
+      <video id="video" class="video" >
+        <source src="/videos/prueba.mp4" type="video/mp4" controls>
+        <div id="cuentaAtras">00:00</div>
+      </video>
+      <div class="hora"><p id="hora"></p></div>
+      <div class="fecha"><p id="fecha"></p></div>
+    </div>
+  {{/if}}
+
+
+  {{#if servicio = imagenologia}}
+        <div class="cont_principal">
+      <img class="encabezado" src="/img/logo_con.png" />
+      <img class="encabezado2" src="/img/logo_caf_itaes.png" />
+      <div id="listado" class="listado"></div>
+      <video id="video" class="video" >
+        <source src="/videos/prueba.mp4" type="video/mp4" controls>
+        <div id="cuentaAtras">00:00</div>
+      </video>
+      <div class="hora"><p id="hora"></p></div>
+      <div class="fecha"><p id="fecha"></p></div>
+    </div>
+    
+    
+   {{#if servicio = laboratorio}}
+    <div class="cont_principal">
+      <img class="encabezado" src="/img/logo_con.png" />
+      <img class="encabezado2" src="/img/logo_caf_itaes.png" />
+      <div id="listado" class="listado"></div>
+      <video id="video" class="video" >
+        <source src="/videos/prueba.mp4" type="video/mp4" controls>
+        <div id="cuentaAtras">00:00</div>
+      </video>
+      <div class="hora"><p id="hora"></p></div>
+      <div class="fecha"><p id="fecha"></p></div>
+    </div>
+    {{/if}}
+
+      <script src="/socket.io/socket.io.js"></script> 
+      <script>
+         const listaLlamadasDoom = document.getElementById('listado');
+         const socket = io(); 
+        
+         const fecha = document.getElementById("fecha");
+         const hora = document.getElementById("hora");
+         setInterval( ()=>{socket.emit('preguntarHoraFecha')},1000);
+         socket.emit('listarLlamadas');
+         socket.on('horaFechaFront',(data)=>{
+           fecha.innerHTML = `${data.ano}`;
+           hora.innerHTML = `${data.hora}`;
+         });
+         socket.on('listaLlamadas',(data)=>{ 
+             listaLlamadasDoom.innerHTML = data.map((item) =>            
+             ` <div class="caja" id="caja" >
+                 <div class="eqtiqueta_paciente" id="paciente">${item.paciente}</div>
+                 <div class="etiqueta_flecha"> > </div>
+                 <div class="etiqueta_lugar">
+                    <div class="pase"  > porfavfgdor pase a :</div>
+                    <div class="lugar" id="lugar"> ${item.lugar} </div>
+                    <div class="doctor"  id="doctor"> ${item.doctor} </div>
+                 </div>
+                <div class="prueba" id="${item.codigo_llamada}"></div>
+             </div>`
+           ).join('');
+         });
+      </script>
+ 

@@ -1,0 +1,105 @@
+#modal {
+  position: fixed;
+  padding: 0px;
+  margin: 0px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  visibility: hidden;
+    opacity: 0;
+  background-color: white;
+  text-align: left;
+  height: 95vh;
+  width: 97vw;
+  border-radius: 25px;
+  border: #80bf41 15px solid;
+  color: #f2f2f2;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
+  grid-template-areas:
+   /* "01  02  03  04  05  06  07  08  09  10  11  12  13  14  15  16  17  18  19  20" */
+    "log log log log log log log log log log log log log log log log log log log log" /*01*/
+    "log log log log log log log log log log log log log log log log log log log log" /*02*/
+    "log log log log log log log log log log log log log log log log log log log log" /*03*/
+    "log log log log log log log log log log log log log log log log log log log log" /*04*/
+    "log log log log log log log log log log log log log log log log log log log log" /*05*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*06*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*07*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*08*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*09*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*10*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*11*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*12*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*13*/
+    "pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac pac" /*14*/
+    "lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug" /*15*/
+    "lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug" /*16*/
+    "lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug lug" /*17*/
+    "doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc" /*18*/
+    "doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc" /*19*/
+    "doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc doc" /*20*/;
+}
+
+#modal img {
+  grid-area: log;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#modal .paciente {
+  grid-area: pac;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(3, 88, 140, 1) 100%
+  );
+  font-size: 10vh;
+  line-height: 10vh;
+  font-weight: bold;
+  color: #80bf41;
+  padding-left: 1vw;
+}
+
+#modal .paciente span {
+  color: #f2f2f2;
+}
+
+#modal .lugar {
+  grid-area: lug;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 88, 140, 1) 0%,
+    rgba(3, 88, 140, 1) 100%
+  );
+  font-size: 9vh;
+  font-weight: bold;
+  color: #80bf41;
+  padding-left: 1vw;
+}
+
+#modal .lugar span {
+  color: #f2f2f2;
+}
+
+#modal .doctor {
+  grid-area: doc;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 88, 140, 1) 0%,
+    rgba(0, 107, 129, 1) 100%
+  );
+  font-size: 9vh;
+  font-weight: bold;
+  color: #f2f2f2;
+  padding-left: 1vw;
+}
+
+#modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+

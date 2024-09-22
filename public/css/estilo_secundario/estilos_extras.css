@@ -1,0 +1,10 @@
+.listado {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.caja {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}

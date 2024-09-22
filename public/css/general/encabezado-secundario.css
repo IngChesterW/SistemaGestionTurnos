@@ -1,0 +1,19 @@
+.encabezado-secundario {
+  grid-area: en2;
+  max-width: 100%;
+  max-height: 95%;
+  margin: auto 0px auto 0px;
+  text-align: center;
+  background-color: #03588c;
+}
+
+.encabezado-secundario p{
+    margin: 1vh;
+    color: white;
+    font-size: 3vw;
+    line-height: 4vh;
+}
+
+.encabezado-secundario p span {
+    font-size: 2vw;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Turnos</title>
+    <link
+      id="estilo_actual"
+      rel="stylesheet"
+      type="text/css"
+      href="css/estilo_principal/estilos.css"
+    />
+    <link
+      id="estilo_modal"
+      rel="stylesheet"
+      type="text/css"
+      href="css/general/modal.css"
+    />
+    <link
+      id="fuentes"
+      rel="stylesheet"
+      type="text/css"
+      href="./css/general/fuentes.css"
+    />
+  </head>
+  <body>
+    <div id="modal"></div>
+    <div class="cont_principal">
+      <img class="encabezado" src="./recursos/imagenes/logo_con.png" />
+      <img class="encabezado2" src="./recursos/imagenes/logo_caf_itaes.png" />
+      <div class="encabezado-secundario">
+        <p>TRIAJE - EMERGENCIAS</p>
+        <p>
+          <span>
+            Est&eacute atento, su nombre aparecer&aacute en pantalla cuando sea
+            su turno.
+          </span>
+        </p>
+      </div>
+      <div id="listado" class="listado"></div>
+      <video id="video" class="video" autoplay>
+        <div id="cuentaAtras">00:00</div>
+      </video>
+      <div class="hora"><p id="hora"></p></div>
+      <div class="fecha"><p id="fecha"></p></div>
+      <script src="./js/jquery.min.js"></script>
+      <cript src="/socket/socket.io"></script>
+      <script src="./js/main.js"></script>
+    </div>
+  </body>
+</html>

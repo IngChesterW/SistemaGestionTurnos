@@ -1,0 +1,29 @@
+.hora {
+  grid-area: hor;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.hora p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 3vw;
+  color: #016a94;
+  font-weight: bold;
+}
+
+.fecha {
+  grid-area: fec;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.fecha p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2vw;
+  color: #016a94;
+  font-weight: bold;
+}

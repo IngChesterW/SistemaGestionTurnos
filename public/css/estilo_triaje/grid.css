@@ -1,0 +1,30 @@
+.cont_principal {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
+  grid-template-areas:
+   /* "01  02  03  04  05  06  07  08  09  10  11  12  13  14  15  16  17  18  19  20" */
+    "enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc" /*01*/
+    "enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc" /*02*/
+    "enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc enc" /*03*/
+    "en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*04*/
+    "en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*05*/
+    "en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*06*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*07*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*08*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*09*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*10*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*11*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*12*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*13*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*14*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*15*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*16*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*17*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*18*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*19*/
+    "vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid vid" /*20*/;
+}

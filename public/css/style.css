@@ -1,0 +1,216 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Be Vietnam;
+  cursor: none;
+}
+/************************/
+/*   Carga de Fuentes   */
+/************************/
+
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../recursos/fuentes/FBVzdDflz-iPfoPuIC2iIqkn6H9k.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../recursos/fuentes/FBVzdDflz-iPfoPuIC2iIqgn6H9k.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../recursos/fuentes/FBVzdDflz-iPfoPuIC2iIqYn6A.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+.cont_principal {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
+  grid-template-areas:
+ /* "01  02  03  04  05  06  07  08  09  10  11  12  13  14  15  16  17  18  19  20" */
+    "en1 en1 en1 en1 en1 en1 en1 en1 en1 en1 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*01*/
+    "en1 en1 en1 en1 en1 en1 en1 en1 en1 en1 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*02*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*03*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*04*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*05*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*06*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*07*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*08*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*09*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*10*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*11*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*12*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*13*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*14*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*15*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*16*/
+    "lis lis lis lis lis lis lis lis lis lis hor hor hor hor hor hor hor hor hor hor" /*17*/
+    "lis lis lis lis lis lis lis lis lis lis hor hor hor hor hor hor hor hor hor hor" /*18*/
+    "lis lis lis lis lis lis lis lis lis lis fec fec fec fec fec fec fec fec fec fec" /*19*/
+    "lis lis lis lis lis lis lis lis lis lis fec fec fec fec fec fec fec fec fec fec" /*20*/;
+}
+
+
+.video {
+  grid-area: vid;
+  align-self: start;
+  width: 98%;
+  max-height: 98%;
+  margin: 0 auto;
+  padding: 0.5vw 0.5vh 0.5vw 0.5vh;
+}
+
+.cuentaAtras{
+  grid-area: vid;
+}
+.encabezado {
+  grid-area: en1;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.encabezado2 {
+  grid-area: en2;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.encabezado-secundario {
+  grid-area: en2;
+  max-width: 100%;
+  max-height: 95%;
+  margin: auto 0px auto 0px;
+  text-align: center;
+  background-color: #03588c;
+}
+
+.encabezado-secundario p{
+    margin: 1vh;
+    color: white;
+    font-size: 3vw;
+    line-height: 4vh;
+}
+
+.encabezado-secundario p span {
+    font-size: 2vw;
+}
+.listado {
+  grid-area: lis;
+  align-self: start;
+  width: 98%;
+  max-height: 98%;
+  margin: 0 auto;
+  padding: 0.5vw 0.5vh 0.5vw 0.5vh;
+}
+.caja {
+  margin-bottom: 1vh;
+  display: grid;
+  grid-template-columns: 55% 10% 35%;
+  border-radius: 10px;
+  border: #03588c 4px solid;
+  background-color: #f2f2f2;
+  color: #03588c;
+  padding: 1%;
+  align-items: center;
+}
+
+.ultima_caja {
+  margin-bottom: 1%;
+  display: grid;
+  grid-template-columns: 55% 10% 35%;
+  border-radius: 10px;
+  border: #80bf41 4px solid;
+  background-color: #03588c;
+  color: #f2f2f2;
+  padding: 1%;
+  align-items: center;
+}
+
+.etiqueta_paciente {
+  font-size: 2.5vw;
+  font-weight: bold;
+  line-height: 2.5vw;
+  margin-top: -1.5vh;
+}
+.etiqueta_flecha {
+  font-size: 3vw;
+  color: #80bf41;
+  font-weight: bolder;
+  justify-self: center;
+}
+
+.etiqueta_lugar .pase {
+  font-size: 1vw;
+  line-height: 1vw;
+}
+
+.etiqueta_lugar .lugar {
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  font-weight: bolder;
+}
+
+.etiqueta_lugar .doctor {
+  font-size: 1vw;
+  line-height: 1vw;
+}
+.caja_grande {
+  border-radius: 10px;
+  border: #03588c 4px solid;
+  background-color: #f2f2f2;
+  color: #03588c;
+  padding: 1%;
+  text-align: center;
+  font-size: 6vh;
+  font-weight: bold;
+}
+.hora {
+  grid-area: hor;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.hora p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 3vw;
+  color: #016a94;
+  font-weight: bold;
+}
+
+.fecha {
+  grid-area: fec;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.fecha p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 2vw;
+  color: #016a94;
+  font-weight: bold;
+}

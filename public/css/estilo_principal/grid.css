@@ -1,0 +1,30 @@
+.cont_principal {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(20, 5%);
+  grid-template-areas:
+ /* "01  02  03  04  05  06  07  08  09  10  11  12  13  14  15  16  17  18  19  20" */
+    "en1 en1 en1 en1 en1 en1 en1 en1 en1 en1 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*01*/
+    "en1 en1 en1 en1 en1 en1 en1 en1 en1 en1 en2 en2 en2 en2 en2 en2 en2 en2 en2 en2" /*02*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*03*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*04*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*05*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*06*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*07*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*08*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*09*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*10*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*11*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*12*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*13*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*14*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*15*/
+    "lis lis lis lis lis lis lis lis lis lis vid vid vid vid vid vid vid vid vid vid" /*16*/
+    "lis lis lis lis lis lis lis lis lis lis hor hor hor hor hor hor hor hor hor hor" /*17*/
+    "lis lis lis lis lis lis lis lis lis lis hor hor hor hor hor hor hor hor hor hor" /*18*/
+    "lis lis lis lis lis lis lis lis lis lis fec fec fec fec fec fec fec fec fec fec" /*19*/
+    "lis lis lis lis lis lis lis lis lis lis fec fec fec fec fec fec fec fec fec fec" /*20*/;
+}

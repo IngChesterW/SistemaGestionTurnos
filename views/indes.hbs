@@ -1,0 +1,46 @@
+<html lang="es=>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Turnos</title>
+  </head>
+  <body>
+        
+       <video id="reproduzirVid width="700" height="400" controls >
+          <source src="videos/prueba.mp4" type="video/mp4">
+         porra do caralho
+       </video> 
+   
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+        const reproduzirVi = document.getElemetById('reproduzirVid');
+        
+      </script>
+      <script>
+         //const listaLlamadasDoom = document.getElementById('listado');
+         const socket = io();
+         socket.emit('connection');
+         document.body.innerHTML = (`<h1> ????? </h1>`).join('');
+         socket.on('listaLlamadas',(data)=>{
+             document.body.innerHTML = data.map(item =>
+             `
+               <div style="width:1000px, height:700px ">
+                  <video style="width:100% height:100%" src="/videos/prueba.mp4" controls >
+                   
+                  </video>         
+               </div>
+               <div class="caja">
+                 <div class="eqtiqueta_paciente">${item.paciente}</div>
+                 <div class="etiqueta_flecha"> > </div>
+                 <div class="etiqueta_lugar">
+                    <div class="pase"> porfavfgdor pase a :</div>
+                    <div class="lugar"> ${item.lugar} </div>
+                    <div class="doctor"> ${item.doctor} </div>
+                 </div>
+             </div>`
+           ).join('');;
+         });
+      </script>
+
+</body>

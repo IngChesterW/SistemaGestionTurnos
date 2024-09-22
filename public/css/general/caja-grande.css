@@ -1,0 +1,10 @@
+.caja_grande {
+  border-radius: 10px;
+  border: #03588c 4px solid;
+  background-color: #f2f2f2;
+  color: #03588c;
+  padding: 1%;
+  text-align: center;
+  font-size: 6vh;
+  font-weight: bold;
+}

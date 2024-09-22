@@ -1,0 +1,52 @@
+.caja {
+  margin-bottom: 1vh;
+  display: grid;
+  grid-template-columns: 55% 10% 35%;
+  border-radius: 10px;
+  border: #03588c 4px solid;
+  background-color: #f2f2f2;
+  color: #03588c;
+  padding: 1%;
+  align-items: center;
+}
+
+.ultima_caja {
+  margin-bottom: 1%;
+  display: grid;
+  grid-template-columns: 55% 10% 35%;
+  border-radius: 10px;
+  border: #80bf41 4px solid;
+  background-color: #03588c;
+  color: #f2f2f2;
+  padding: 1%;
+  align-items: center;
+}
+
+.etiqueta_paciente {
+  font-size: 2.5vw;
+  font-weight: bold;
+  line-height: 2.5vw;
+  margin-top: -1.5vh;
+}
+.etiqueta_flecha {
+  font-size: 3vw;
+  color: #80bf41;
+  font-weight: bolder;
+  justify-self: center;
+}
+
+.etiqueta_lugar .pase {
+  font-size: 1vw;
+  line-height: 1vw;
+}
+
+.etiqueta_lugar .lugar {
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  font-weight: bolder;
+}
+
+.etiqueta_lugar .doctor {
+  font-size: 1vw;
+  line-height: 1vw;
+}

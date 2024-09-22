@@ -1,0 +1,12 @@
+.video {
+  grid-area: vid;
+  align-self: start;
+  width: 98%;
+  max-height: 98%;
+  margin: 0 auto;
+  padding: 0.5vw 0.5vh 0.5vw 0.5vh;
+}
+
+.cuentaAtras{
+  grid-area: vid;
+}
