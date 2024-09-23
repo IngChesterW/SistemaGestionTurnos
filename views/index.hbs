@@ -49,7 +49,9 @@
    {{/if}} 
     
    {{#if  laboratorio}}
-    <div class="cont_principal">
+   
+   </div> 
+   <div class="cont_principal">
       <img class="encabezado" src="/img/logo_lab.png" />
       <img class="encabezado2" src="/img/logo_caf_itaes.png" />
       <div id="listado" class="listado"></div>
@@ -58,37 +60,30 @@
       </video>
       <div class="hora"><p id="hora"></p></div>
       <div class="fecha"><p id="fecha"></p></div>
+      <div class="mensaje">
+         <div class="mensajeCont" id="scrolealo">
+            
+         </div>
+      </div> 
     </div>
     {{/if}}
  
       <script src="/socket.io/socket.io.js"></script> 
       <script>
-         const listaLlamadasDoom = document.getElementById('listado'); 
+         const listaLlamadasDoom = document.getElementById("listado"); 
          const fecha = document.getElementById("fecha");
          const hora = document.getElementById("hora");
          const socket = io ();
-         socket.on('modal',(data)=>{
-            document.innerHTML = data.map((item) => 
-           `<div id="modal" class="show">
-              <img class="logo" id="logo" src="/img/logo_caf_itaes.png" />
-              <div class="paciente">
-                Paciente: <br />
-                <span>${item.paciente}</span>
-              </div>
-              <div class="lugar"> Pase a: <span>${item.lugar}</span><br /></div>
-              <div class="doctor">${item.doctor}</div>
-             </div>`
-              ).join('');
-         });
          setInterval( ()=>{socket.emit('preguntarHoraFecha')},1000);
          socket.emit('listarLlamadas');
          socket.on('horaFechaFront',(data)=>{
            fecha.innerHTML = `${data.ano}`;
            hora.innerHTML = `${data.hora}`;
          });
+    
          socket.on('listaLlamadas',(data)=>{ 
-             listaLlamadasDoom.innerHTML = data.map((item) =>            
-             ` <div class="caja" id="caja" data-idLlamada = ${item.codigo_llamada}>
+            listaLlamadasDoom.innerHTML = data.map((item) =>
+               ` <div class=${item.clase}  id="caja" >
                  <div class="eqtiqueta_paciente" id="paciente">${item.paciente}</div>
                  <div class="etiqueta_flecha"> > </div>
                  <div class="etiqueta_lugar">
@@ -96,10 +91,12 @@
                     <div class="lugar" id="lugar"> ${item.lugar} </div>
                     <div class="doctor"  id="doctor"> ${item.doctor} </div>
                  </div>
-                <div class="prueba" id="${item.codigo_llamada}"></div>
-             </div>`
+               </div>
+             `
            ).join('');
          });
+    
+       socket.on('nuevaLlamada',(lista)=>{ socket.emit('listarLlamadas'); console.log('control');}); 
        const video = document.getElementById("video");
        function llamarVid () { 
         const idVideo = video.getAttribute("data-idVidAct");
@@ -112,4 +109,8 @@
           video.setAttribute("data-idVidAct", videoInfo.idVideo ); 
        });
        video.addEventListener('ended',()=>{ llamarVid(); });
+       socket.emit('listarMensajes');
+       socket.on('listaMensajes',(data)=>{
+       document.getElementById("scrolealo").textContent= data;
+       });
       </script>
