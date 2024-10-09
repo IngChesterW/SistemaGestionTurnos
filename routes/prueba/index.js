@@ -48,7 +48,7 @@ router.get('/prueba/pantalla/:servicio',async(req,res)=>{
     const {servicio} = req.params;
     console.log(servicio);
 	let pedo={doctor:'doc',paciente:'paciente',lugar:'lugar'};
-    req.flash('message','probando');
+    
     //escuchamos la conexion desde el front
      io.on('connection', async(socket)=>{
 	   console.log('conetou');
@@ -61,11 +61,22 @@ router.get('/prueba/pantalla/:servicio',async(req,res)=>{
 	  //escuchamos cuando el front pregunta por la lista de llamadas
           socket.on('listarLlamadas',async()=>{
 	     console.log('trae');
-             let listaLlamadas = await pool.query('select * from llamadas ORDER BY codigo_llamada DESC LIMIT 5');
+             const  listaLlamadas = await pool.query('select * from llamadas ORDER BY codigo_llamada DESC LIMIT 5');
              //emitimos la lista de llamadas que acabamos de guardar en listaLlamadas
-	     socket.emit('listaLlamadas',listaLlamadas[0]);
+	     let  maxCodigoLlamada = Math.max(...listaLlamadas[0].map(item => item.codigo_llamada));
+	        const ultimaCaja =  listaLlamadas[0].map((item) =>{
+	      if(item.codigo_llamada === maxCodigoLlamada){
+		     item.clase='ultima_caja';
+		    
+	      }else{
+		     item.clase='caja';
+		    
+	      }
+	    return item;
 	  });
-	  //configuraciones de  video
+	     socket.emit('listaLlamadas',ultimaCaja);
+	  });
+//configuraciones------------------- de---------------------  video
       let listaVideos ={};
       let a = 0;
       let videos = path.join(__dirname,'../../public/videos/');
@@ -78,9 +89,7 @@ router.get('/prueba/pantalla/:servicio',async(req,res)=>{
 	 });
 	 });
       socket.on('video',(idVid)=>{
-	 console.log(idVid);
          if(idVid === '0'){
-            console.log('ak');
             let  nuevoVid = {idVideo : 1 , src: listaVideos[1]};
             io.emit('nuevoVideo',nuevoVid);
 	 }else{
@@ -96,14 +105,22 @@ router.get('/prueba/pantalla/:servicio',async(req,res)=>{
 	 };
       });
       
-      });
-     //escuchamos por actualizaciones en las llamadas 
-     io.on('pruebaConGet', async ()=>{   
-       //listamos y emitimos la nueva lista 
-       let listaLlamadas = await pool.query('select * from llamadas ORDER BY codigo_llamada DESC LIMIT 5');
-       io.emit('listaLlamadas',listaLlamadas[0]);
-       console.log('prueba pantalla');
-      });
+      
+//listar------------mensajes-------------front-------------------------------->
+ socket.on('listarMensajes',async ()=>{
+ let mensajes = await pool.query('select * from mensajes');
+     mensajes = mensajes[0];
+ var listaMensajes = ' ';
+ var indice = 0;
+ var  espacios = ' '.repeat(7);
+ var  prueba = espacios.repeat(10);
+       mensajes.forEach(mensaje =>{
+        listaMensajes = (listaMensajes + espacios  + [mensajes[0].mensaje]);
+	indice = indice + 1;
+       });
+ socket.emit('listaMensajes',listaMensajes); 
+ });
+     });
 
 //render de views segun que servicio sea
  if(servicio){
@@ -168,7 +185,8 @@ router.get('/prueba/registroLlamadaGet',async(req,res)=>{
         	}
 	//emitimos el evento para  mostrar lista llamadas  en pantalla en tiempo real
        const listaLlamadas = await pool.query('select * from llamadas order by codigo_llamada desc limit  5');
-       io.emit('listaLlamadas', listaLlamadas[0]);
+       
+       io.emit('nuevaLlamada');
        //resultado para testing de rest
 	res.send(resultado);
 });
